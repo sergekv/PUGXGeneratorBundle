@@ -39,7 +39,7 @@
 
                 <th scope="col">
                 {%- if withSort -%}
-                {{ "{{ thead('" ~ entity|lower ~"', '"~ field ~"', '"~ field|replace({'_': ' '})|title ~"') }}" }}
+                {{ "{{ thead('" ~ entity|lower ~"', '"~ field ~"', '"~ entity|lower|slice(0, 1) ~"."~ field|replace({'_': ' '})|title ~"') }}" }}
                 {%- else -%}
                 {{ field|replace({'_': ' '})|title }}
                 {%- endif -%}
